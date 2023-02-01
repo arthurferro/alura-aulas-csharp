@@ -10,15 +10,26 @@ namespace ByteBank.Administracao.Utilitarios
     public class GerenciadorDeBonificacao
     {
         public double TotalBonificacao { get; private set; }
+        public double TotalPremioSemestral { get; private set; }
 
         public void Registrar(Funcionario funcionario)
         {
-            this.TotalBonificacao += funcionario.GetBonificacao();
+            TotalBonificacao += funcionario.GetBonificacao();
         }
 
         public double getBonificacao()
         {
-            return this.TotalBonificacao;
+            return TotalBonificacao;
+        }
+
+        public void RegistrarPremioSemestral(Funcionario funcionario)
+        {
+            TotalPremioSemestral += funcionario.PremioSemestral();
+        }
+
+        public double getPremioSemestral(Funcionario funcionario)
+        {
+            return TotalPremioSemestral;
         }
     }
 }

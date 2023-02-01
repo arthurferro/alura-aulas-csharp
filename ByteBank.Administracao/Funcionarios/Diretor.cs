@@ -12,5 +12,19 @@ namespace ByteBank.Administracao.Funcionarios
         {
             return Salario + base.GetBonificacao();
         }
+
+        public override double PremioSemestral()
+        {
+            return Salario + base.PremioSemestral();
+        }
+
+        public Diretor (string cpf, double salario) : base(cpf, salario)
+        {
+        }
+
+        public override void AumentarSalario()
+        {
+            Salario *= 1.15;
+        }
     }
 }
